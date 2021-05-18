@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
 
 
-import openrouteservice as ors
+import openrouteservice as ors  ##open source software
 import pandas as pd
 
 
 def main():
 
 
-    location_data = pd.read_csv('~/Documents/Spring 2021/Stat Project/MSA_location.csv')
+    location_data = pd.read_csv('~/Spring 2021/Stat Project/MSA_location.csv')
     
     location_lng = location_data['LONGITUDE']
     location_lat = location_data['LATITUDE']
@@ -62,7 +62,7 @@ def main():
     
         
     location_data['DURATION'] = route_series
-    location_data.to_csv('C:/Users/Omegon/Documents/Spring 2021/Stat Project/MSA_location.csv')
+    location_data.to_csv('~/Spring 2021/Stat Project/MSA_location.csv')
         
     ##sort by county to keep matrix size down, needs to be kept down even more 3500 max. 
     #(max rows 58 + 1 for desto = 59; 59^2 = 3481
@@ -250,7 +250,7 @@ def main():
 
 ##convert below into a function
 def ors_matrix(county_coordinates, source_list):
-    client = ors.Client(key='')
+    client = ors.Client(key='')#requires key from ORS
     
     #  organized as [longitude, latitude]
     coordinates = county_coordinates
