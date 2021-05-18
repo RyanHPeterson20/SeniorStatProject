@@ -17,7 +17,7 @@ def main():
         
     ##econ data 2015
     ##remove the weird column headers before importing
-    econData2015 = pd.read_csv('~/Documents/Spring 2021/Stat Project/ACS Data/2015_2019_ecoData_tract/ACSDP5Y2015.DP03_data_with_overlays_2021-02-15T164745.csv')
+    econData2015 = pd.read_csv('~/Spring 2021/Stat Project/ACS Data/2015_2019_ecoData_tract/ACSDP5Y2015.DP03_data_with_overlays_2021-02-15T164745.csv')
     
         
     ##create new column with county codes
@@ -36,7 +36,7 @@ def main():
     print(MSA_econData2015['CodeID'])    
     
     ##demo data 2015
-    demoData2015 = pd.read_csv('~/Documents/Spring 2021/Stat Project/ACS Data/2015_2019_demoData_tract/ACSDP5Y2015.DP05_data_with_overlays_2021-02-15T165132.csv')
+    demoData2015 = pd.read_csv('~/Spring 2021/Stat Project/ACS Data/2015_2019_demoData_tract/ACSDP5Y2015.DP05_data_with_overlays_2021-02-15T165132.csv')
 
     ##create new column with county codes
     demoData2015['CountyCodes'] = countyCodes(demoData2015['id'])
@@ -52,7 +52,7 @@ def main():
     
     
     ##social data 2015
-    socData2015 = pd.read_csv('~/Documents/Spring 2021/Stat Project/ACS Data/2015_2019_socialData_Tract/ACSDP5Y2015.DP02_data_with_overlays_2021-02-15T164333.csv')
+    socData2015 = pd.read_csv('~/Spring 2021/Stat Project/ACS Data/2015_2019_socialData_Tract/ACSDP5Y2015.DP02_data_with_overlays_2021-02-15T164333.csv')
         
     #extract Census Tract name from id number
     socData2015['Geographic Area Name'] = censusTractNumbers(socData2015['Geographic Area Name'])
@@ -67,7 +67,7 @@ def main():
     
     
     ##housing data 2015
-    houseData2015 = pd.read_csv('~/Documents/Spring 2021/Stat Project/ACS Data/2015_2019_housingData_tract/ACSDP5Y2015.DP04_data_with_overlays_2021-02-15T164949.csv')
+    houseData2015 = pd.read_csv('~/Spring 2021/Stat Project/ACS Data/2015_2019_housingData_tract/ACSDP5Y2015.DP04_data_with_overlays_2021-02-15T164949.csv')
     
     #extract Census Tract name from id number
     houseData2015['Geographic Area Name'] = censusTractNumbers(houseData2015['Geographic Area Name'])
@@ -81,15 +81,15 @@ def main():
     MSA_houseData2015['CodeID'] = codeID(MSA_houseData2015['id'])
     
     #export of cleaned data
-    MSA_houseData2015.to_csv('~/Documents/Spring 2021/Stat Project/MSA_house_clean_2015.csv')
-    MSA_socData2015.to_csv('~/Documents/Spring 2021/Stat Project/MSA_soc_clean_2015.csv')
-    MSA_demoData2015.to_csv('~/Documents/Spring 2021/Stat Project/MSA_demo_clean_2015.csv')
-    MSA_econData2015.to_csv('~/Documents/Spring 2021/Stat Project/MSA_econ_clean_2015.csv')
+    MSA_houseData2015.to_csv('~/Spring 2021/Stat Project/MSA_house_clean_2015.csv')
+    MSA_socData2015.to_csv('~/Spring 2021/Stat Project/MSA_soc_clean_2015.csv')
+    MSA_demoData2015.to_csv('~/Spring 2021/Stat Project/MSA_demo_clean_2015.csv')
+    MSA_econData2015.to_csv('~/Spring 2021/Stat Project/MSA_econ_clean_2015.csv')
     
    
     
 ###----------------------------
-    tract_centroid = pd.read_csv('~/Documents/Spring 2021/Stat Project/CenPop2010_Mean_TR08.txt', dtype=str)
+    tract_centroid = pd.read_csv('~/Spring 2021/Stat Project/CenPop2010_Mean_TR08.txt', dtype=str)
 
     ##county code to form 000
     countyCode = []
@@ -129,8 +129,7 @@ def main():
         
 
 def censusTractNumbers(tractname):
-    ##turn this into a function so we can extract tract numbers from any list
-    ##make function pass tract column, return cleaned string with only numbers
+
     censusTract = []
     censusTractNum = []
     censusTractFinal = []
