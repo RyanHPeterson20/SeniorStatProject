@@ -9,4 +9,8 @@ The time it takes a commuter to navigate an urban space depends on the transport
 
 For this project I used data from the American Community Survey and U.S. Census Track Data.\
 Open Source Used:\
-*Open Route Service
+*Open Route Service\
+https://github.com/GIScience/openrouteservice-py
+
+***
+Note: Much of the statistical work for this project was done using R, available upon request.
