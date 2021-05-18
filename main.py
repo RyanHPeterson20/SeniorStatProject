@@ -9,7 +9,7 @@ from haversine import Unit
 def main():
     
     #import routing and location data for 
-    location_data = pd.read_csv('C:/Users/Omegon/Documents/Spring 2021/Stat Project/MSA_location.csv')
+    location_data = pd.read_csv('~/Spring 2021/Stat Project/MSA_location.csv')
     
     ##convert duration data from string to float then seconds to minutes
     duration = []
@@ -36,7 +36,7 @@ def main():
 
     
     ##import econ data
-    econ_data = pd.read_csv('C:/Users/Omegon/Documents/Spring 2021/Stat Project/MSA_econ_clean_2015.csv')
+    econ_data = pd.read_csv('~/Spring 2021/Stat Project/MSA_econ_clean_2015.csv')
     
     ##rename columns with more appropriate names
     econ_data.rename(columns = {'Percent!!EMPLOYMENT STATUS!!Population 16 years and over!!In labor force!!Civilian labor force!!Employed' : 'LABOR_PARTICIPATION'}, inplace=True)
@@ -46,7 +46,7 @@ def main():
     
     
     ##import demographic data
-    demo_data = pd.read_csv('C:/Users/Omegon/Documents/Spring 2021/Stat Project/MSA_demo_clean_2015.csv')
+    demo_data = pd.read_csv('~/Spring 2021/Stat Project/MSA_demo_clean_2015.csv')
     
     #rename column with appropriate names
     demo_data.rename(columns = {'Percent!!RACE!!One race!!White':'%POP_WHITE'}, inplace=True)
@@ -56,7 +56,7 @@ def main():
     
     
     ##import housing data
-    house_data  = pd.read_csv('C:/Users/Omegon/Documents/Spring 2021/Stat Project/MSA_house_clean_2015.csv')  
+    house_data  = pd.read_csv('~/Spring 2021/Stat Project/MSA_house_clean_2015.csv')  
     
     #rename columns with more appropriate names
     house_data.rename(columns = {'Percent!!UNITS IN STRUCTURE!!Total housing units!!1-unit, detached':'%SINGLE_FAMILY_HOMES'}, inplace=True)
@@ -68,7 +68,7 @@ def main():
     
     
     ##import social data
-    social_data = pd.read_csv('C:/Users/Omegon/Documents/Spring 2021/Stat Project/MSA_soc_clean_2015.csv')
+    social_data = pd.read_csv('C~/Spring 2021/Stat Project/MSA_soc_clean_2015.csv')
 
     #rename columns with more appropriate names
     social_data.rename(columns = {'Percent!!HOUSEHOLDS BY TYPE!!Households with one or more people under 18 years':'1+_UNDER18'}, inplace=True)
@@ -95,7 +95,7 @@ def main():
  
         
         
-    regression_data.to_csv('C:/Users/Omegon/Documents/Spring 2021/Stat Project/StatProject_Final.csv')
+    regression_data.to_csv('~/Spring 2021/Stat Project/StatProject_Final.csv')
 
     
     
@@ -108,7 +108,7 @@ def main():
     
     random_sample = pd.DataFrame(regression_data, index = var_Reduction_Id)
     
-    random_sample.to_csv('C:/Users/Omegon/Documents/Spring 2021/Stat Project/Random_Sample.csv')
+    random_sample.to_csv('~/Spring 2021/Stat Project/Random_Sample.csv')
     
     
 if __name__ == '__main__':
