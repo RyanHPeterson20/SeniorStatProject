@@ -8,7 +8,7 @@ import pandas as pd
 def main():
 
 
-    location_data = pd.read_csv('C:/Users/Omegon/Documents/Spring 2021/Stat Project/MSA_location.csv')
+    location_data = pd.read_csv('~/Documents/Spring 2021/Stat Project/MSA_location.csv')
     
     location_lng = location_data['LONGITUDE']
     location_lat = location_data['LATITUDE']
@@ -17,6 +17,7 @@ def main():
     for i in range(len(location_data)-1):
         location_routing_data.append([location_lng[i],float(location_lat[i])])
         
+    #This is ugly but it worked    
     source_id_1 = list(range(1, 100))
     source_id_2 = list(range(100, 200))
     source_id_3 = list(range(200, 300))
@@ -249,12 +250,11 @@ def main():
 
 ##convert below into a function
 def ors_matrix(county_coordinates, source_list):
-    client = ors.Client(key='5b3ce3597851110001cf62487017b467e1b44e9abe4e508444211c91')
+    client = ors.Client(key='')
     
     #  organized as [longitude, latitude]
     coordinates = county_coordinates
 
-    ##won't take destination as an argument for some reason
     matrix = client.distance_matrix(
         locations=coordinates,
         sources = source_list,
@@ -263,8 +263,7 @@ def ors_matrix(county_coordinates, source_list):
         metrics=['duration'],
       validate=False,
     )
-    
-    ##todo extract the first column, then delete the first entry
+
     return matrix['durations']
 
 
